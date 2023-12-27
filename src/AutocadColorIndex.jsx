@@ -9,7 +9,7 @@ import {
 } from 'antd';
 import copy from 'copy-to-clipboard';
 import React, { useState } from 'react';
-import colors from './colors';
+import { colors } from './colors';
 
 message.config({
   maxCount: 1,
