@@ -5,19 +5,19 @@ import {
   Tooltip,
   Typography,
   Descriptions,
-  message
-} from "antd";
-import copy from "copy-to-clipboard";
-import React, { useState } from "react";
-import colors from "./colors";
+  message,
+} from 'antd';
+import copy from 'copy-to-clipboard';
+import React, { useState } from 'react';
+import colors from './colors';
 
 message.config({
-  maxCount: 1
+  maxCount: 1,
 });
 
-function hex2rgb(value) {
+function hexToRgb(value) {
   return value.replace(/#(\w{2})(\w{2})(\w{2})/g, (_, $1, $2, $3) => {
-    if (!$1 || !$2 || !$3) return "/";
+    if (!$1 || !$2 || !$3) return '/';
     return `rgb(${parseInt($1, 16)}, ${parseInt($2, 16)}, ${parseInt($3, 16)})`;
   });
 }
@@ -27,7 +27,7 @@ const ColorInfo = ({ data }) => {
     <>
       <span>{data.color}</span>
       <br />
-      <span>{hex2rgb(data.color)}</span>
+      <span>{hexToRgb(data.color)}</span>
       <br />
       <span>{data.i}</span>
       <br />
@@ -39,17 +39,17 @@ const ColorPicker = ({ data, selected, setSelected }) => (
   <Tooltip title={<ColorInfo data={data} />}>
     <Col
       className={[
-        "color",
-        selected && selected.color === data.color ? "color--selected" : ""
+        'color',
+        selected && selected.color === data.color ? 'color--selected' : '',
       ]}
       style={{
         backgroundColor: data.color,
-        height: "40px"
+        height: '40px',
       }}
       span={1}
       onClick={() => {
         copy(data.color);
-        message.info("Copied");
+        message.info('Copied');
         setSelected(data);
       }}
     ></Col>
@@ -117,7 +117,7 @@ export const AutocadColorIndex = () => {
                 {selected.color}
               </Typography.Paragraph>
             ) : (
-              "/"
+              '/'
             )}
           </Descriptions.Item>
           <Descriptions.Item label="RGB">
@@ -126,14 +126,14 @@ export const AutocadColorIndex = () => {
                 {hex2rgb(selected.color)}
               </Typography.Paragraph>
             ) : (
-              "/"
+              '/'
             )}
           </Descriptions.Item>
           <Descriptions.Item label="颜色索引">
             {selected ? (
               <Typography.Paragraph copyable>{selected.i}</Typography.Paragraph>
             ) : (
-              "/"
+              '/'
             )}
           </Descriptions.Item>
         </Descriptions>
