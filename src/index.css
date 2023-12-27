@@ -1,0 +1,11 @@
+.App {
+  padding: 20px;
+}
+.color:hover {
+  box-sizing: border-box;
+  border: 1px solid #eeeeee;
+}
+
+.color--selected {
+  border: 1px solid #eeeeee;
+}

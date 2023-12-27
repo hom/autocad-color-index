@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "antd": "^5.0.0-rc.1",
+    "copy-to-clipboard": "3.3.3",
+    "dayjs": "latest",
+    "react": "18.x",
+    "react-dom": "18.x"
+  },
+  "keywords": [],
+  "name": "autocad-color-index",
+  "description": null,
+  "version": "0.0.91",
+  "devDependencies": {
+    "react-scripts": "1.0.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
